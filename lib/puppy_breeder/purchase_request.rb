@@ -27,30 +27,38 @@ module PuppyBreeder
       end
       p @@transactions_hash
     end 
-
+    def put_orders_on_hold
+      if PuppyBreeder::Puppymanager.in_the_pen[@transaction.breed_request] == nil
+        @transaction.status = "dog not in pen status ON HOLD"
+      else 
+        @transaction.status = "pending"
+        p "That puppy has become available"
+      end
+    end
     def self.viewing_pending_transactions
-      i = 0
-      @@transactions_hash["pending"].each do |order|
-        puts "#{i += 1}. Order #{order.status} for a #{order.breed_request}"
-      end 
+      y = @@transactions_hash["pending"].map do |x|
+        x.status
+      end
+      p "You have #{y.length} orders pending"
     end 
   end
 end 
 
 
-transaction1 = PuppyBreeder::Purchaserequest.new("Rotweiler")
-transaction2 = PuppyBreeder::Purchaserequest.new("Rotweiler")
-transaction3 = PuppyBreeder::Purchaserequest.new("Rotweiler")
-transaction4 = PuppyBreeder::Purchaserequest.new("German Shepard")
-today = PuppyBreeder::Transaction_manager.new(transaction1)
-today1 = PuppyBreeder::Transaction_manager.new(transaction2)
-today2 = PuppyBreeder::Transaction_manager.new(transaction3)
-today3 = PuppyBreeder::Transaction_manager.new(transaction4)
-today.inputing_transactions
-today1.inputing_transactions
-today2.inputing_transactions
-today3.inputing_transactions
+# transaction1 = PuppyBreeder::Purchaserequest.new("Rotweiler")
+# transaction2 = PuppyBreeder::Purchaserequest.new("Rotweiler")
+# transaction3 = PuppyBreeder::Purchaserequest.new("Rotweiler")
+# transaction4 = PuppyBreeder::Purchaserequest.new("German Shepard")
+# today = PuppyBreeder::Transaction_manager.new(transaction1)
+# today1 = PuppyBreeder::Transaction_manager.new(transaction2)
+# today2 = PuppyBreeder::Transaction_manager.new(transaction3)
+# today3 = PuppyBreeder::Transaction_manager.new(transaction4)
+# today.inputing_transactions
+# today1.inputing_transactions
+# today2.inputing_transactions
+# today3.inputing_transactions
 
-today.accepting_requests
+# today.accepting_requests
 
-PuppyBreeder::Transaction_manager.viewing_pending_transactions
+# PuppyBreeder::Transaction_manager.viewing_pending_transactions
+

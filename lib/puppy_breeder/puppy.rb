@@ -31,18 +31,18 @@ module PuppyBreeder
   end
 end
 
-puppy1 = PuppyBreeder::Puppy.new("Mark", "Rotweiler", 5)
-puppy2 = PuppyBreeder::Puppy.new("Oso", "Rotweiler", 5)
-puppy3 = PuppyBreeder::Puppy.new("Max", "Rotweiler", 5)
-puppy4 = PuppyBreeder::Puppy.new("Delilah", "German Shepard", 5)
-puppy5 = PuppyBreeder::Puppy.new("Jimmy", "West Highland Terrier", 5)
-add_puppy1 = PuppyBreeder::Puppymanager.new(puppy1)
-add_puppy1.puppies_breed 
-add_puppy2 = PuppyBreeder::Puppymanager.new(puppy2)
-add_puppy2.puppies_breed 
-add_puppy3 = PuppyBreeder::Puppymanager.new(puppy3)
-add_puppy3.puppies_breed 
-add_puppy4 = PuppyBreeder::Puppymanager.new(puppy4)
-add_puppy4.puppies_breed 
-add_puppy5 = PuppyBreeder::Puppymanager.new(puppy5)
-add_puppy5.puppies_breed 
+# puppy1 = PuppyBreeder::Puppy.new("Mark", "Rotweiler", 5)
+# puppy2 = PuppyBreeder::Puppy.new("Oso", "Rotweiler", 5)
+# puppy3 = PuppyBreeder::Puppy.new("Max", "Rotweiler", 5)
+# puppy4 = PuppyBreeder::Puppy.new("Delilah", "German Shepard", 5)
+# puppy5 = PuppyBreeder::Puppy.new("Jimmy", "West Highland Terrier", 5)
+# add_puppy1 = PuppyBreeder::Puppymanager.new(puppy1)
+# add_puppy1.puppies_breed 
+# add_puppy2 = PuppyBreeder::Puppymanager.new(puppy2)
+# add_puppy2.puppies_breed 
+# add_puppy3 = PuppyBreeder::Puppymanager.new(puppy3)
+# add_puppy3.puppies_breed 
+# add_puppy4 = PuppyBreeder::Puppymanager.new(puppy4)
+# add_puppy4.puppies_breed 
+# add_puppy5 = PuppyBreeder::Puppymanager.new(puppy5)
+# add_puppy5.puppies_breed 
