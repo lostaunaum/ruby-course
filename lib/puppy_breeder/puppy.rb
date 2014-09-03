@@ -7,6 +7,7 @@ module PuppyBreeder
       @breed = breed
       @age = age
     end
+    #we are creating our puppy object
   end
 
   class Puppymanager
@@ -15,6 +16,7 @@ module PuppyBreeder
     def initialize(puppy_object)
       @puppy_object = puppy_object
     end
+    #We are inserting our puppy object within a class that will manage all our puppies within a pen
 
     def puppies_breed
       if @@in_the_pen[@puppy_object.breed] == nil
@@ -25,9 +27,14 @@ module PuppyBreeder
       p @@in_the_pen
     end
 
+    #This hash is being created but we are using our breeds as a key and it is pointing to an array of dog objects
+
     def self.in_the_pen
       @@in_the_pen
     end
+
+    #this method will allow us to call our HASH OF DOGS in our other ruby pages. 
+
   end
 end
 

@@ -6,6 +6,7 @@ module PuppyBreeder
       @breed_request = breed_request
       @status = status
     end 
+    #We are creating our transactions here 
   end 
 
   class Transaction_manager
@@ -13,11 +14,13 @@ module PuppyBreeder
     def initialize(transaction)
       @transaction = transaction
     end 
+    #We create a class to manage our transaction
 
     def accepting_requests
       @transaction.status = 'accepted'
       puts "Transaction #{@transaction.status} for a #{@transaction.breed_request}" 
     end
+    #this method will allow us to change the status and accept them
 
     def inputing_transactions
       if @@transactions_hash[@transaction.status] == nil
@@ -27,6 +30,8 @@ module PuppyBreeder
       end
       p @@transactions_hash
     end 
+    #this method will allow us to create a hash and use the statuses as a key while pointing to an array of transaction objects
+
     def put_orders_on_hold
       if PuppyBreeder::Puppymanager.in_the_pen[@transaction.breed_request] == nil
         @transaction.status = "dog not in pen status ON HOLD"
@@ -35,6 +40,8 @@ module PuppyBreeder
         p "That puppy has become available"
       end
     end
+    #If the puppy does not exisist within our pen we put the statys on HOLD because we cannot fulfill the order if the puppy becomes available, it will automatically change the status to PENDING
+
     def self.viewing_pending_transactions
       y = @@transactions_hash["pending"].map do |x|
         x.status
@@ -42,6 +49,7 @@ module PuppyBreeder
       p "You have #{y.length} orders pending"
     end 
   end
+  #This method will print out how many PENDING orders we have in our hash.
 end 
 
 
